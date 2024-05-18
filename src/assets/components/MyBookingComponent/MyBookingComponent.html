@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plane Ticket Template</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .ticket-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px;
+            background-color: #54d0d0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #007bff;
+        }
+        .ticket-header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .ticket-header img {
+            width: 80px;
+        }
+        .ticket-header h2 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .ticket-details {
+            margin-bottom: 15px;
+        }
+        .ticket-details div {
+            margin-bottom: 8px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ticket-details div label {
+            font-weight: bold;
+            color: #333;
+        }
+        .ticket-details div span {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="ticket-header">
+           
+            <h2>MY BOOKING</h2>
+            <form id="PlaneForm">
+        </div>
+        <div class="ticket-details">
+            <div>
+                <label>Booking Date:</label>
+                <span>Saturday, May 25, 2024</span>
+            </div>
+            <div>
+                <label>Guest Name:</label>
+                <span>Miss Stephanie Celine Linden</span>
+            </div>
+            <div>
+                <label>Route:</label>
+                <span>New York to London</span>
+            </div>
+            <div>
+                <label>Airline:</label>
+                <span>ACME Airlines</span>
+            </div>
+            <div>
+                <label>Flight Number:</label>
+                <span>AA7755</span>
+            </div>
+            <div>
+                <label>Departure Date:</label>
+                <span>Monday,  May 27, 2024 06:30</span>
+            </div>
+            <div>
+                <label>Arrival Date:</label>
+                <span>Tuesdat, May 28, 2024 5:00</span>
+            </div>
+            <div>
+                <label>Departure Terminal:</label>
+                <span>Terminal 1</span>
+            </div>
+            <div>
+                <label>Arrival Terminal:</label>
+                <span>Terminal 5</span>
+            </div>
+            <div>
+                <label>Seat Class:</label>
+                <span>Business Class</span>
+            </div>
+            <div>
+                <label>Extra Baggage Allowance:</label>
+                <span>8</span>
+            </div>
+            <div>
+                <label>Seat Number:</label>
+                <span>3</span>
+            </div>
+        </form>
+       
+        <button class="back-button" onclick="goBack()">Back</button>
+    </div>
+        </div>
+    </div>
+    <script>
+      document.getElementById("PlaneForm").addEventListener("submit", function(event){
+        event.preventDefault(); // prevent the default form submission
+        
+        // You can add your JavaScript validation or submission logic here
+        // For demonstration, let's just show a message
+        document.getElementById("message").innerHTML = "Form submitted successfully!";
+        
+        // Redirect to home page after a brief delay (for demonstration purposes)
+        setTimeout(function(){
+            window.location.href = "project/index.html"; // Change to the appropriate URL
+        }, 2000); // 2000 milliseconds (2 seconds) delay before redirection
+    });
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>

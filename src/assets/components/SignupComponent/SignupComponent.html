@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIGNUP FORM</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d58e8e;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .signin-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .signin-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .signin-link a:hover {
+    text-decoration: underline;
+  }
+  .back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Sign Up</h2>
+  <form id="signupForm">
+    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <input type="submit" value="Sign Up">
+  </form>
+  <div class="signin-link">
+    <p>Already registered? <a href="#">Sign in here</a></p>
+          
+  
+  </form>
+  <div id="message"></div>
+  <button class="back-button" onclick="goBack()">Back</button>
+</div>
+
+<script>
+  document.getElementById("signupForm").addEventListener("submit", function(event){
+      event.preventDefault(); // prevent the default form submission
+      
+      // You can add your JavaScript validation or submission logic here
+      // For demonstration, let's just show a message
+      document.getElementById("message").innerHTML = "Form submitted successfully!";
+      
+      // Redirect to home page after a brief delay (for demonstration purposes)
+      setTimeout(function(){
+          window.location.href = "project/index.html"; // Change to the appropriate URL
+      }, 2000); // 2000 milliseconds (2 seconds) delay before redirection
+  });
+
+  function goBack() {
+      window.history.back();
+  }
+</script>
+
+</body>
+</html>

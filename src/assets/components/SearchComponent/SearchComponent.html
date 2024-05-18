@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Reservation Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #2096c8;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .form-header {
+            margin-bottom: 20px;
+        }
+        .form-header h2 {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #333;
+        }
+        .form-header img {
+            width: 80px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+        .form-footer {
+            text-align: right;
+        }
+        .form-footer button {
+            padding: 10px 20px;
+            background-color: #3219eea2;
+            color: #2b15a4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .form-footer button:hover {
+            background-color: #a51eb439;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            
+            <h2>Flight Reservation</h2>
+        </div>
+        <form id="flightForm">
+            <div class="form-group">
+                <label for="title">Passenger Name</label>
+                <input type="text" id="title" name="title" placeholder="Title">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" class="date-input">
+            </div>
+            <div class="form-group">
+                <label for="seat-type">Seat Type</label>
+                <select id="seat-type" name="seat-type">
+                    <option value="">Select Seat Type</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="flight-name">Flight Name</label>
+                <select id="flight-name" name="flight-name">
+                    <option value="">Select Flight Name</option>
+                </select>
+            </div>
+            <div class="form-footer">
+                <button type="button" onclick="submitForm()">Next</button>
+                <button type="button" onclick="goBack()">Back</button>
+            </div>
+        </form>
+    
+    </div>
+
+    <script>
+        // JavaScript code to populate seat type and flight name dropdowns
+        document.addEventListener('DOMContentLoaded', function() {
+            var seatTypeDropdown = document.getElementById('seat-type');
+            var flightNameDropdown = document.getElementById('flight-name');
+
+            // Populate seat type dropdown
+            for (let i = 1; i <= 60; i++) {
+                var option = document.createElement('option');
+                option.text = 'Seat ' + i;
+                option.value = 'Seat ' + i;
+                seatTypeDropdown.add(option);
+            }
+
+            // Populate flight name dropdown
+            for (let i = 1; i <= 30; i++) {
+                var option = document.createElement('option');
+                option.text = 'Flight ' + i;
+                option.value = 'Flight ' + i;
+                flightNameDropdown.add(option);
+            }
+        });
+
+        document.getElementById("flightForm").addEventListener("submit", function(event){
+        event.preventDefault(); // prevent the default form submission
+        
+        // You can add your JavaScript validation or submission logic here
+        // For demonstration, let's just show a message
+        document.getElementById("message").innerHTML = "Form submitted successfully!";
+        
+        // Redirect to home page after a brief delay (for demonstration purposes)
+        setTimeout(function(){
+            window.location.href = "project/index.html"; // Change to the appropriate URL
+        }, 2000); // 2000 milliseconds (2 seconds) delay before redirection
+    });
+
+    function goBack() {
+        window.history.back();
+    }
+    </script>
+</body>
+</html>
